@@ -55,7 +55,7 @@ def test_delete_pet():
     assert pet_id not in my_pets.values()
 
 
-def test_update_pet_info(name='из', animal_type='измененный', age='5'):
+def test_update_pet_info(name='Том2', animal_type='котик', age='5'):
     '''Проверяем возможность изменения данных питомца'''
     _, api_key = pf.get_app_key(valid_email, valid_password)
     _, my_pets = pf.get_list_of_pets(api_key, 'my_pets')
@@ -94,7 +94,7 @@ def test_successful_update_self_pet_info(name='Ася', animal_type='Кошка'
         # если спиок питомцев пустой, то выкидываем исключение с текстом об отсутствии своих питомцев
         raise Exception("There is no my pets")
 
-def test_add_photo_at_pet(pet_photo='images/German.jpg'):
+def test_add_photo_at_pet(pet_photo='images/кот.jpg'):
     '''Проверяем возможность добавления новой фотографии питомца'''
     pet_photo = os.path.join(os.path.dirname(__file__), pet_photo)
 
